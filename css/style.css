@@ -1,0 +1,47 @@
+.icons-sprite {
+
+  background-repeat: no-repeat;
+}
+
+/* Mixins */
+textarea:focus, input:focus, button:focus {
+  outline: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+* html .clearfix {
+  zoom: 1;
+}
+
+/* IE6 */
+*:first-child + html .clearfix {
+  zoom: 1;
+}
+
+/* IE7 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e9e9e9;
+  font-family: Helvetica, Arial, sans-serif !important;
+}
+
+.flexible-image {
+  max-width: 100%;
+}
+
+/*--------------------------------------------
+
+HEADER
+---------------------------------------------*/
+
+.slider {
+  min-width: 320px;
+}
