@@ -58,7 +58,7 @@ slider
 ---------------------------------------------*/
 #slider-wrap {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 -50px 0 0;
 }
 
 #active-slide {
@@ -66,13 +66,17 @@ slider
     display: table;
     position: relative;
     overflow: hidden;
-    padding: 0 20px 0 0;
+    padding: 0 20px 0 50px;
     box-sizing: border-box;
+    margin: 0 0 0 -50px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
+}
+#active-slide span.slide-title {
+    opacity: 1;
 }
 
 #slider {
@@ -100,19 +104,49 @@ slider
 }
 .slide-title {
     color: white;
+    display: block;
     font-size: 40px;
     line-height: 47px;
     position: absolute;
-    left: 10px;
-    bottom: 30px;
+    left: -50px;
+    bottom: 60px;
+    width: 80%;
+    opacity: 0;
+    font-weight: bold;
 }
 .slide-title span {
     font-size: 60px;
     line-height: 50px;
 
 }
+.slide-event {
+    position: absolute;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    display: block;
+    left: -50px;
+    padding-left: 25px;
+    background-repeat: no-repeat;
+    background-size: 12px 15px;
 
-
+}
+.slide-event__urgency {
+    background-image: url("../img/icons/fire-icon.png");
+}
+.slide-event__location {
+    background-image: url("../img/icons/location.png")
+}
+.show-details {
+    font-size: 14px;
+    line-height: 16px;
+    color: #FF781C;
+    position: absolute;
+    bottom: 10px;
+    left: -50px;
+    font-weight: bold;
+    text-decoration: none;
+}
 
 .slide img {
     width: 100%;
