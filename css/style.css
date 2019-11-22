@@ -44,9 +44,13 @@ img {
 /*--------------------------------------------
 container
 ---------------------------------------------*/
-.container {
+.container-wrap {
     margin: 0 auto;
     width: 320px;
+}
+
+.container {
+
     background-color: black;
     box-sizing: border-box;
     padding: 24px 0 40px 72px;
@@ -155,18 +159,21 @@ slider
 }
 
 .Radio-But {
+    width: 100%;
+    margin-left: -80px;
     margin-top: 10px;
     text-align: center;
 }
 
 .Radio-But .ctrl-select {
-    margin: 2px;
+    margin: 3px;
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 6px;
+    height: 6px;
     overflow: hidden;
     text-indent: -9999px;
-    background-color: red;
+    background: #333333;
+    border-radius: 50%;
 }
 
 .Radio-But .ctrl-select:hover {
@@ -175,9 +182,34 @@ slider
 }
 
 .Radio-But .ctrl-select.active {
+    background-color: #FF781C;
     background-position: center top;
 }
 
 #prewbutton, #nextbutton {
     display: none;
 }
+/*--------------------------------------------
+events
+---------------------------------------------*/
+
+.events {
+    background-color: #151515;
+}
+.events-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.events-list li {
+    border-bottom: 1px solid #2A2A2A;
+    padding: 22px 0 21px 0;
+}
+.events-item__title {
+    font-size: 26px;
+    line-height: 30px;
+    color: #FFFFFF;
+    padding: 22px 0 21px 23px !important;
+    font-weight: bold;
+}
+
