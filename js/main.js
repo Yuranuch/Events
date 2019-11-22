@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     var timeList = 700;
-    var TimeView = 5000;
+    // var TimeView = 5000;
     var RadioBut = true;
 
     var slideNum = 1;
