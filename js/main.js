@@ -1,101 +1,93 @@
 $(document).ready(function () {
-//-----slick-slider  
-$(document).on('ready', function() {
-  $(".lazy").slick({
-        lazyLoad: 'ondemand', // ondemand progressive anticipated
-        dots: true,
-        infinite: true,
-        arrows: false,
-        //autoplay: true
-      });
-});
-//------stiky-header
- $("#top-menu li a, .single-link a").click(function() {
-    var elementClick = $(this).attr("href")
-    var destination = $(elementClick).offset().top -70;
-    $("#top-menu li a").removeClass('active');
-    $(this).addClass('active');
-    jQuery("html:not(:animated),body:not(:animated)").animate({
-      scrollTop: destination
-    }, 800);
-    return false;
-  });
-//-----same-box-height    
-$('.l1-bottom').each(function(){
-  var highestBox = 0;
-  $('.l1-bottom-ins', this).each(function(){
-    if($(this).height() > highestBox) {
-      highestBox = $(this).height();
-    }
-  });
-  $('.l1-bottom-ins',this).height(highestBox);
-});
-//--------lada-loader------
-/*var buttons = document.querySelectorAll( '.ladda-button' );
 
-Array.prototype.slice.call( buttons ).forEach( function( button ) {
+    var timeList = 700;
+    var TimeView = 5000;
+    var RadioBut = true;
 
-  var resetTimeout;
+    var slideNum = 1;
+    var slideTime;
+    slideCount = $("#slider .slide").length;
 
-  button.addEventListener( 'click', function() {
+    var animSlide = function(arrow){
+        clearTimeout(slideTime);
 
-    if( typeof button.getAttribute( 'data-loading' ) === 'string' ) {
-      button.removeAttribute( 'data-loading' );
-    }
-    else {
-      button.setAttribute( 'data-loading', '' );
+        if(arrow == "next"){
+            if(slideNum == slideCount) { slideNum=1; }
+            else{slideNum++}
+            translateWidth = -$('#active-slide').width() * (slideNum - 1);
+            $('#slider').css({'transform': 'translate(' + translateWidth + 'px, 0)'});
+        }
+        else if(arrow == "prew")
+        {
+            if(slideNum == 1) { slideNum=slideCount; }
+            else{slideNum-=1}
+            translateWidth = -$('#active-slide').width() * (slideNum - 1);
+            $('#slider').css({'transform': 'translate(' + translateWidth + 'px, 0)'});
+        }else{
+            slideNum = arrow;
+            translateWidth = -$('#active-slide').width() * (slideNum -1);
+            $('#slider').css({'transform': 'translate(' + translateWidth + 'px, 0)'});
+        }
+
+        $(".ctrl-select.active").removeClass("active");
+        $('.ctrl-select').eq(slideNum - 1).addClass('active');
     }
 
-    clearTimeout( resetTimeout );
-    resetTimeout = setTimeout( function() {
-      button.removeAttribute( 'data-loading' );     
-    }, 2000 );
+    if(RadioBut){
+        var $linkArrow = $('<a id="prewbutton" href="#">&lt;</a><a id="nextbutton" href="#">&gt;</a>')
+            .prependTo('#active-slide');
+        $('#nextbutton').click(function(){
+            animSlide("next");
+            return false;
+        })
+        $('#prewbutton').click(function(){
+            animSlide("prew");
+            return false;
+        })
+    }
+    var adderSpan = '';
+    $('.slide').each(function(index) {
+        adderSpan += '<span class = "ctrl-select">' + index + '</span>';
+    });
+    $('<div class ="Radio-But">' + adderSpan +'</div>').appendTo('#slider-wrap');
+    $(".ctrl-select:first").addClass("active");
+    $('.ctrl-select').click(function(){
+        var goToNum = parseFloat($(this).text());
+        animSlide(goToNum + 1);
+    });
+    var pause = false;
+    var rotator = function(){
+        if(!pause){slideTime = setTimeout(function(){animSlide('next')}, TimeView);}
+    }
+    $('#slider-wrap').hover(
+        function(){clearTimeout(slideTime); pause = true;},
+        function(){pause = false; rotator();
+        });
 
-  }, false );
+    var clicking = false;
+    var prevX;
+    $('.slide').mousedown(function(e){
+        clicking = true;
+        prevX = e.clientX;
+    });
 
-} );
-*/
-//--------sweet-alert-init
-/*
-$('.alert1').click(function(){
-  swal({
-    title: "Good job!",
-    text: "You clicked the button!",
-    type: "success",
-    confirmButtonColor: "#34d2d1",
-  });
-});
+    $('.slide').mouseup(function() {
+        clicking = false;
+    });
 
-$('.alert2').click(function () {
-  swal({
-    title: "Are you sure?",
-    text: "You will not be able to recover this imaginary file!",
-    type: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#34d2d1",
-    confirmButtonText: "Yes, delete it!",
-    closeOnConfirm: false
-  }, function () {
-    swal("Deleted!", "Your imaginary file has been deleted.", "success");
-  });
-});
-*/
-//.error - розовая рамка (для input[type='text'],textarea)
-//-------modal
-$(".popup-link").click(function()
-{
- $('#mask').fadeIn(300);
- var iddiv = $(this).attr("iddiv");
- $('#'+iddiv).addClass('active');
- $('#mask').attr('opendiv',iddiv);
- return false;
-});
+    $(document).mouseup(function(){
+        clicking = false;
+    });
 
-$('#mask, .box-close, #top-menu li a').click(function()
-{
- var iddiv = $("#mask").attr('opendiv');
- $('#mask').fadeOut(300);
- $('#'+iddiv).removeClass('active');
-});
-$('.custom-sel').selectize();
+    $('.slide').mousemove(function(e){
+        if(clicking == true)
+        {
+            if(e.clientX < prevX) { animSlide("next"); clearTimeout(slideTime); }
+            if(e.clientX > prevX) { animSlide("prew"); clearTimeout(slideTime); }
+            clicking = false;
+        }
+    });
+    $('.slide').hover().css('cursor', 'pointer');
+    rotator();
+
 });

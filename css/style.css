@@ -36,12 +36,92 @@ body {
 .flexible-image {
   max-width: 100%;
 }
+img { border: 0; max-width: 100%; }
 
 /*--------------------------------------------
-
-HEADER
+container
 ---------------------------------------------*/
+.container {
+  margin: 0 auto;
+  width: 320px;
+  background-color: black;
+  box-sizing: border-box;
+  padding: 24px 0 40px 72px;
 
-.slider {
-  min-width: 320px;
+}
+
+#slider-wrap{
+  max-width:800px;
+  margin: 0 auto;
+}
+
+#active-slide {
+  border: 1px solid white;
+  width: 100%;
+  display: table;
+  position: relative;
+  overflow: hidden;
+  padding: 0 20px 0 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#slider{
+  position: relative;
+  width: calc(100% * 4);
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.slide{
+  width: calc(96%/4);
+  margin-right: 1%;
+  border-radius: 5px;
+  list-style: none;
+  display: inline;
+  float: left;
+}
+
+.slide img {
+  width:100%;
+}
+
+.Radio-But{
+  margin-top:10px;
+  text-align:center;
+}
+
+.Radio-But .ctrl-select {
+  margin:2px;
+  display:inline-block;
+  width:16px;
+  height:16px;
+  overflow:hidden;
+  text-indent:-9999px;
+  background-color: red;
+}
+
+.Radio-But .ctrl-select:hover {
+  cursor:pointer;
+  background-position:center center;
+}
+
+.Radio-But .ctrl-select.active {
+  background-position:center top;
+}
+
+#prewbutton, #nextbutton {
+  display:none;
 }
