@@ -139,7 +139,7 @@ slider
     background-image: url("../img/icons/fire-icon.png");
 }
 .slide-event__location {
-    background-image: url("../img/icons/location.png")
+    background-image: url("../img/icons/location.png");
 }
 .show-details {
     font-size: 14px;
@@ -298,8 +298,53 @@ events
 .item-img img {
     margin-bottom: -3px;
 }
+/*--------------------------------------------
+navigation
+---------------------------------------------*/
 
+.navigation {
+    min-height: 48px;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.feed {
+    width: 20px;
+    height: 22px;
+    display: block;
+    background-image: url("../img/icons/feeds.png")
+}
+.feed:hover {
+    background-image: url("../img/icons/feeds-active.png")
+}
+.event {
+    width: 23px;
+    height: 25px;
+    display: block;
+    background-image: url("../img/icons/events.png")
+}
+.event:hover {
+    background-image: url("../img/icons/events-active.png")
+}
 
-
+.search {
+    width: 29px;
+    height: 23px;
+    display: block;
+    background-image: url("../img/icons/search.png")
+}
+.search:hover {
+    background-image: url("../img/icons/search-active.png")
+}
+.profile {
+    width: 29px;
+    height: 23px;
+    display: block;
+    background-image: url("../img/icons/profile.png")
+}
+.profile:hover {
+    background-image: url("../img/icons/profile-active.png")
+}
 
 
