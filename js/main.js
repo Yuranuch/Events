@@ -91,3 +91,23 @@ $(document).ready(function () {
     rotator();
 
 });
+
+function diplay_hide (blockId)
+
+{
+
+    var par = document.getElementsByClassName('navigation-feed');
+    if ($(blockId).css('display') == 'none')
+    {
+        $(blockId).animate({height: 'show'}, 500);
+        par[0].classList.add("active")
+    }
+    else
+    {
+        $(blockId).animate({height: 'hide'}, 500);
+        par[0].classList.remove("active")
+    }}
+
+
+
+

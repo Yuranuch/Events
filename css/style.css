@@ -50,7 +50,7 @@ container
 }
 
 .container {
-
+    overflow: hidden;
     background-color: black;
     box-sizing: border-box;
     padding: 24px 0 40px 72px;
@@ -195,6 +195,7 @@ events
 
 .events {
     background-color: #151515;
+    overflow: hidden;
 }
 .events-list {
     margin: 0;
@@ -215,16 +216,20 @@ events
 }
 .events-item {
     border-bottom: 1px solid #2A2A2A;
-    padding: 22px 0 21px 0;
     position: relative;
+    display: flex;
+    flex-wrap: nowrap;
 
 }
+.events-item-padding {
+    padding: 22px 0 21px 0;
+}
+
 .events-item-flag {
      position: absolute;
      top: 22px;
      right: 10px;
  }
-
 
 .item-content {
     position: relative;
@@ -298,6 +303,23 @@ events
 .item-img img {
     margin-bottom: -3px;
 }
+
+.recommended-item {
+    width: 128px;
+    background: linear-gradient(26.66deg, #FF971C 20.96%, #FF6600 104.08%);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+}
+.events-item-padding__fixed {
+    margin: 0 -128px 0 0 ;
+    background-image: url("../img/equalizer.png") ;
+    background-repeat: no-repeat;
+    background-position: left 93px top 20px;
+}
+.events-item-padding__fixed .events-item-flag {
+    display: none
+}
+
+
 /*--------------------------------------------
 navigation
 ---------------------------------------------*/
@@ -309,42 +331,75 @@ navigation
     justify-content: space-around;
     align-items: center;
 }
-.feed {
+.navigation-feed {
     width: 20px;
     height: 22px;
     display: block;
     background-image: url("../img/icons/feeds.png")
 }
-.feed:hover {
+.navigation-feed.active {
     background-image: url("../img/icons/feeds-active.png")
 }
-.event {
+.navigation-feed:hover {
+    background-image: url("../img/icons/feeds-active.png")
+}
+.navigation-event {
     width: 23px;
     height: 25px;
     display: block;
     background-image: url("../img/icons/events.png")
 }
-.event:hover {
+.navigation-event {
+    position: relative;
+}
+.navigation-event span{
+    position: absolute;
+    font-size: 8px;
+    min-width: 15px;
+    text-align: center;
+    display: inline-block;
+    line-height: 15px;
+    background-color: #2E61E5;
+    border-radius: 18px;
+    font-weight: bold;
+    top: -5px;
+    left: 15px;
+    color: white;
+}
+.navigation-event:hover {
     background-image: url("../img/icons/events-active.png")
 }
 
-.search {
+.navigation-search {
     width: 29px;
     height: 23px;
     display: block;
     background-image: url("../img/icons/search.png")
 }
-.search:hover {
+.navigation-search:hover {
     background-image: url("../img/icons/search-active.png")
 }
-.profile {
-    width: 29px;
-    height: 23px;
+.navigation-profile {
+    width: 27px;
+    height: 26px;
     display: block;
     background-image: url("../img/icons/profile.png")
 }
-.profile:hover {
+.navigation-profile:hover {
     background-image: url("../img/icons/profile-active.png")
 }
 
+#searchCollapse {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+}
+
+#block_id {
+    display: none;
+}
 

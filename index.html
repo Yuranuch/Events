@@ -53,10 +53,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="events">
+
+	<div id="block_id" class="events">
 		<ul class="events-list">
-			<li class="events-item events-item__title">Feed</li>
+			<li class="events-item events-item__title">
+				Feed
+			</li>
 			<li class="events-item">
+				<div class="events-item-padding">
                 <div class="item-content">
                     <div class="item-img">
                         <img src="./img/small-image.png" alt="video"/>
@@ -68,8 +72,10 @@
                         </span>
                     </div>
                 </div>
+				</div>
 			</li>
 			<li class="events-item">
+				<div class="events-item-padding">
                 <div class="events-item-flag">
                     <img src="./img/icons/flag.png" alt="f">
                 </div>
@@ -84,8 +90,10 @@
 					</span>
 				</div>
                 </div>
+				</div>
 			</li>
             <li class="events-item">
+				<div class="events-item-padding">
                 <div class="item-content  item-content__top-padding">
                 <div class="item-img item-img">
                     <img src="./img/big-image.png" alt="video"/>
@@ -97,8 +105,10 @@
 					</span>
                 </div>
                 </div>
+				</div>
             </li>
             <li class="events-item">
+				<div class="events-item-padding">
                 <div class="events-item-flag">
                     <img src="./img/icons/flag.png" alt="f">
                 </div>
@@ -116,8 +126,30 @@
                         Houston, United States 13 October
                     </div>
                 </div>
+				</div>
+            </li>
+            <li class="events-item">
+                <div class="recommended-item">
+                </div>
+                <div class="events-item-padding events-item-padding__fixed">
+                    <div class="events-item-flag">
+                        <img src="./img/icons/flag.png" alt="f">
+                    </div>
+                    <div class="item-content">
+                        <div class="item-img">
+                            <img src="./img/small-image-2.png" alt="video"/>
+                        </div>
+                        <div class="item-title">
+                            645AR - Workin ft. 10kDug...<br/>
+                            <span>
+						Beez Exclusivez
+					</span>
+                        </div>
+                    </div>
+                </div>
             </li>
 			<li class="events-item">
+				<div class="events-item-padding">
 				<div class="item-content">
 					<div class="item-img">
 						<img src="./img/small-image-3.png" alt="video"/>
@@ -129,8 +161,10 @@
                         </span>
 					</div>
 				</div>
+				</div>
 			</li>
 			<li class="events-item">
+				<div class="events-item-padding">
 				<div class="item-content  item-content__top-padding">
 					<div class="item-img item-img">
 						<img src="./img/big-image-2.png" alt="video"/>
@@ -142,19 +176,24 @@
 					</span>
 					</div>
 				</div>
+				</div>
 			</li>
 
 		</ul>
 	</div>
 	<div class="navigation">
-		<a href="#" class="feed"></a>
-		<a href="#" class="event"></a>
-		<a href="#" class="search"></a>
-		<a href="#" class="profile"></a>
+		<a href="#" onclick="diplay_hide('#block_id');return false;" class="navigation-feed"></a>
+		<a href="#" class="navigation-event"><span>28</span></a>
+		<a href="#" class="navigation-search"></a>
+		<a href="#" class="navigation-profile"></a>
 	</div>
 </div>
+
+
+
 
 
 <script src="js/main.js"></script>
 </body>
 </html>
+
