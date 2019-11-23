@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <link href="css/style.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -20,7 +21,7 @@
 					<div class="slide">
 
 							<span class="slide-title">
-								<span>16</span>
+								<span>16</span><br/>
 								new events
 							</span>
 						<a href="#" class="show-details">Open map</a>
@@ -28,7 +29,7 @@
 					</div>
 					<div class="slide">
 						<span class="slide-event slide-event__urgency">Hottest</span>
-						<span class="slide-title">
+						<span class="slide-title slide-title__large-font">
 								Temple rock
 							</span>
 						<a href="#" class="show-details">Show details</a>
@@ -36,18 +37,11 @@
 					</div>
 					<div class="slide">
 						<span class="slide-event slide-event__location">Nearest</span>
-						<span class="slide-title">
+						<span class="slide-title slide-title__large-font">
 								Drop the beat 3
 							</span>
 						<a href="#" class="show-details">Show details</a>
 						<img src="img/drop-the-beat.png" alt="third-slide">
-					</div>
-					<div class="slide">
-							<span class="slide-title">
-								Minsk – Vilnius
-							</span>
-						<a href="#" class="show-details">Show tour</a>
-						<img src="img/map.png" alt="fourth-slide">
 					</div>
 				</div>
 			</div>
@@ -55,14 +49,14 @@
 	</div>
 
 	<div id="block_id" class="events">
+		<div class="events-title">
+			Feed
+		</div>
 		<ul class="events-list">
-			<li class="events-item events-item__title">
-				Feed
-			</li>
 			<li class="events-item">
 				<div class="events-item-padding">
                 <div class="item-content">
-                    <div class="item-img">
+                    <div class="item-img item-img__music">
                         <img src="./img/small-image.png" alt="video"/>
                     </div>
                     <div class="item-title">
@@ -80,7 +74,7 @@
                     <img src="./img/icons/flag.png" alt="f">
                 </div>
                 <div class="item-content">
-				<div class="item-img">
+				<div class="item-img item-img__music">
 					<img src="./img/small-image-2.png" alt="video"/>
 				</div>
 				<div class="item-title">
@@ -95,12 +89,12 @@
             <li class="events-item">
 				<div class="events-item-padding">
                 <div class="item-content  item-content__top-padding">
-                <div class="item-img item-img">
+                <div class="item-img item-img__video">
                     <img src="./img/big-image.png" alt="video"/>
                 </div>
                 <div class="item-title">
 					Final battle: Issei VS Hong 10 Red Bull BC One..<br/>
-                    <span>
+                    <span class="item-title-time">
 						48:23
 					</span>
                 </div>
@@ -108,7 +102,7 @@
 				</div>
             </li>
             <li class="events-item">
-				<div class="events-item-padding">
+				<div class="events-item-padding ">
                 <div class="events-item-flag">
                     <img src="./img/icons/flag.png" alt="f">
                 </div>
@@ -116,37 +110,17 @@
                     <a href="#">Bboy Event <span>recommends an event</span></a>
                 </div>
                 <div class="item-content item-content__bottom-padding">
-                    <div class="item-img ">
+                    <div class="item-img item-img__event">
                         <img src="./img/heigh-img.png" alt="video"/>
                     </div>
                     <div class="item-title item-title__large-font">
                         King or queen of the circle 2018
                     </div>
                     <div class="event-date">
-                        Houston, United States 13 October
+                        Houston, United States<br/> 13 October
                     </div>
                 </div>
 				</div>
-            </li>
-            <li class="events-item">
-                <div class="recommended-item">
-                </div>
-                <div class="events-item-padding events-item-padding__fixed">
-                    <div class="events-item-flag">
-                        <img src="./img/icons/flag.png" alt="f">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-img">
-                            <img src="./img/small-image-2.png" alt="video"/>
-                        </div>
-                        <div class="item-title">
-                            645AR - Workin ft. 10kDug...<br/>
-                            <span>
-						Beez Exclusivez
-					</span>
-                        </div>
-                    </div>
-                </div>
             </li>
 			<li class="events-item">
 				<div class="events-item-padding">
@@ -165,6 +139,21 @@
 			</li>
 			<li class="events-item">
 				<div class="events-item-padding">
+					<div class="item-content">
+						<div class="item-img item-img__music">
+							<img src="./img/small-image.png" alt="video"/>
+						</div>
+						<div class="item-title">
+							Surreal soulja 2<br/>
+							<span>
+                            Cashcurt
+                        </span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="events-item">
+				<div class="events-item-padding">
 				<div class="item-content  item-content__top-padding">
 					<div class="item-img item-img">
 						<img src="./img/big-image-2.png" alt="video"/>
@@ -176,6 +165,41 @@
 					</span>
 					</div>
 				</div>
+				</div>
+			</li>
+			<li class="events-item">
+				<div class="recommended-item">
+				</div>
+				<div class="events-item-padding events-item-padding__fixed">
+					<div class="events-item-flag">
+						<img src="./img/icons/flag.png" alt="f">
+					</div>
+					<div class="item-content">
+						<div class="item-img">
+							<img src="./img/small-image-2.png" alt="video"/>
+						</div>
+						<div class="item-title">
+							645AR - Workin ft. 10kDug...<br/>
+							<span>
+						Beez Exclusivez
+					</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="events-item">
+				<div class="events-item-padding">
+					<div class="item-content">
+						<div class="item-img item-img__music">
+							<img src="./img/small-image.png" alt="video"/>
+						</div>
+						<div class="item-title">
+							Surreal soulja 2<br/>
+							<span>
+                            Cashcurt
+                        </span>
+						</div>
+					</div>
 				</div>
 			</li>
 

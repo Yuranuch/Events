@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "UniNeueBlack";
+    src: url("../fonts/UniNeue-Black/UniNeueBlack.eot");
+    src: url("../fonts/UniNeue-Black/UniNeueBlack.svg");
+    src: url("../fonts/UniNeue-Black/UniNeueBlack.woff");
+    src: url("../fonts/UniNeue-Black/UniNeueBlack.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "UniNeue-Regular";
+    src: url("../fonts/UniNeue-Regular/UniNeueRegular.eot");
+    src: url("../fonts/UniNeue-Regular/UniNeueRegular.svg");
+    src: url("../fonts/UniNeue-Regular/UniNeueRegular.woff");
+    src: url("../fonts/UniNeue-Regular/UniNeueRegular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "UniNeue-Bold";
+    src: url("../fonts/UniNeue-Bold/UniNeueBold.eot");
+    src: url("../fonts/UniNeue-Bold/UniNeueBold.svg");
+    src: url("../fonts/UniNeue-Bold/UniNeueBold.woff");
+    src: url("../fonts/UniNeue-Bold/UniNeueBold.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "SF-Compact-Display-Regular";
+    src: url("../fonts/SF-Compact-Display-Regular/SF-Compact-Display-Regular.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "SF-Compact-Display-Bold";
+    src: url("../fonts/SF-Compact-Display-Bold/SF-Compact-Display-Bold.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "SF-Compact-Display-Medium";
+    src: url("../fonts/SF-Compact-Display-Medium/SF-Compact-Display-Medium.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "SF-Compact-Display-Black";
+    src: url("../fonts/SF-Compact-Display-Black/SF-Compact-Display-Black.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+SF-Compact-Display-Black
+
+
+
