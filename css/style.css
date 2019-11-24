@@ -494,7 +494,43 @@ map
     background-color: #2A2A2A;
     position: relative;
 }
+.map-page__header {
+    padding: 38px 10px 26px 24px;
+}
 
+.map-page__header span {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 13px 0 0 0;
+    display: block;
+    font-weight: 600;
+    color: #D5D5D5;
+}
+.map-page__wrap {
+    background-image: url("../img/map.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.map-page__content {
+    padding-top: 10px;
+    position: relative;
+}
+.map-page__content--radius {
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
+
+.map-page__content--strip {
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    margin-left: -16px;
+    width: 32px;
+    height: 3px;
+    background: #FF781C;
+    border-radius: 5px;
+}
 .navigation a {
     background: none;
     font-size: 10px;
