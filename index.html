@@ -6,43 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
+	<link rel="stylesheet" href="./css/nomralize.css">
     <link href="css/style.css" rel="stylesheet">
 	<link href="css/fonts.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 
 </head>
 <body>
 <div class="container-wrap">
 	<div class="container">
-		<div id="slider-wrap">
-			<div id="active-slide">
-				<div id="slider">
-					<div class="slide">
-
-							<span class="slide-title">
-								<span>16</span><br/>
-								new events
-							</span>
+		<div class="slider-container">
+			<div class="slider">
+				<div class="slide">
+					<div class="slide-content">
+                        <span class="slide-title">
+                            <span>16</span><br/>
+                            new events
+                        </span>
 						<a href="#" class="show-details">Open map</a>
-						<img src="img/map.png" alt="first-slide">
 					</div>
-					<div class="slide">
+					<img src="./img/map.png" alt="first-slide">
+				</div>
+				<div class="slide">
+					<div class="slide-content">
 						<span class="slide-event slide-event__urgency">Hottest</span>
 						<span class="slide-title slide-title__large-font">
-								Temple rock
-							</span>
+                            Temple rock
+                        </span>
 						<a href="#" class="show-details">Show details</a>
-						<img src="img/temple-rok-event.png" alt="second-slide">
 					</div>
-					<div class="slide">
+					<img src="./img/temple-rok-event.png" alt="second-slide">
+				</div>
+				<div class="slide">
+					<div class="slide-content">
 						<span class="slide-event slide-event__location">Nearest</span>
 						<span class="slide-title slide-title__large-font">
-								Drop the beat 3
-							</span>
+                            Drop the beat 3
+                        </span>
 						<a href="#" class="show-details">Show details</a>
-						<img src="img/drop-the-beat.png" alt="third-slide">
 					</div>
+					<img src="./img/drop-the-beat.png" alt="third-slide">
 				</div>
 			</div>
 		</div>
@@ -110,7 +114,7 @@
                     <a href="#">Bboy Event <span>recommends an event</span></a>
                 </div>
                 <div class="item-content item-content__bottom-padding">
-                    <div class="item-img">
+                    <div class="item-img item-img-event">
                         <img src="./img/heigh-img.png" alt="video"/>
                     </div>
                     <div class="item-title item-title__large-font">
@@ -208,7 +212,7 @@
 	</div>
 	<div class="navigation">
 		<a href="#" onclick="diplay_hide('#block_id');return false;" class="navigation-feed"></a>
-		<a href="#" class="navigation-event"><span>28</span></a>
+		<a href="#" class="navigation-event"><span class="upper-number">28</span></a>
 		<a href="#" class="navigation-search"></a>
 		<a href="#" class="navigation-profile"></a>
 	</div>
@@ -217,8 +221,10 @@
 
 
 
-
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="js/main.js"></script>
+<!-- /JS -->
 </body>
 </html>
 

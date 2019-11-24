@@ -1,12 +1,8 @@
 $(document).ready(function () {
 
-    var timeList = 700;
-    // var TimeView = 1000;
-    var RadioBut = true;
-
     var slideNum = 1;
     var slideTime;
-    slideCount = $("#slider .slide").length;
+    slideCount = $(".slider .slide").length;
 
     var animSlide = function(arrow){
         clearTimeout(slideTime);
@@ -14,52 +10,41 @@ $(document).ready(function () {
         if(arrow == "next"){
             if(slideNum == slideCount) { slideNum=1; }
             else{slideNum++}
-            translateWidth = -$('#active-slide').width() * (slideNum - 1);
-            $('#slider').css({'transform': 'translate(' + translateWidth + 'px, 0)'});
+            translateWidth = -$('.slider-container').width() * (slideNum - 1);
+            $('.slider').css({'transform': 'translate(' + translateWidth + 'px, 0)'});
         }
         else if(arrow == "prew")
         {
             if(slideNum == 1) { slideNum=slideCount; }
             else{slideNum-=1}
-            translateWidth = -$('#active-slide').width() * (slideNum - 1);
-            $('#slider').css({'transform': 'translate(' + translateWidth + 'px, 0)'});
+            translateWidth = -$('.slider-container').width() * (slideNum - 1);
+            $('.slider').css({'transform': 'translate(' + translateWidth + 'px, 0)'});
         }else{
             slideNum = arrow;
-            translateWidth = -$('#active-slide').width() * (slideNum -1);
-            $('#slider').css({'transform': 'translate(' + translateWidth + 'px, 0)'});
+            translateWidth = -$('.slider-container').width() * (slideNum -1);
+            $('.slider').css({'transform': 'translate(' + translateWidth + 'px, 0)'});
         }
 
         $(".ctrl-select.active").removeClass("active");
         $('.ctrl-select').eq(slideNum - 1).addClass('active');
+
+        $(".slide.active").removeClass("active");
+        $('.slide').eq(slideNum - 1).addClass('active');
     }
 
-    if(RadioBut){
-        var $linkArrow = $('<a id="prewbutton" href="#">&lt;</a><a id="nextbutton" href="#">&gt;</a>')
-            .prependTo('#active-slide');
-        $('#nextbutton').click(function(){
-            animSlide("next");
-            return false;
-        })
-        $('#prewbutton').click(function(){
-            animSlide("prew");
-            return false;
-        })
-    }
     var adderSpan = '';
     $('.slide').each(function(index) {
         adderSpan += '<span class = "ctrl-select">' + index + '</span>';
     });
-    $('<div class ="Radio-But">' + adderSpan +'</div>').appendTo('#slider-wrap');
+    $('<div class ="radios">' + adderSpan +'</div>').appendTo('.slider-container');
+    $(".slide:first").addClass("active");
     $(".ctrl-select:first").addClass("active");
     $('.ctrl-select').click(function(){
         var goToNum = parseFloat($(this).text());
         animSlide(goToNum + 1);
     });
     var pause = false;
-    var rotator = function(){
-        if(!pause){slideTime = setTimeout(function(){animSlide('next')}, TimeView);}
-    }
-    $('#slider-wrap').hover(
+    $('.slider-wrap').hover(
         function(){clearTimeout(slideTime); pause = true;},
         function(){pause = false; rotator();
         });
@@ -88,14 +73,12 @@ $(document).ready(function () {
         }
     });
     $('.slide').hover().css('cursor', 'pointer');
-    rotator();
 
 });
 
 function diplay_hide (blockId)
 
 {
-
     var par = document.getElementsByClassName('navigation-feed');
     if ($(blockId).css('display') == 'none')
     {
