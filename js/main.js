@@ -76,10 +76,11 @@ $(document).ready(function () {
 
 });
 
+
 function diplay_hide (blockId)
 
 {
-    var par = document.getElementsByClassName('navigation-feed');
+    var par = document.getElementsByClassName('navigation--feed');
     if ($(blockId).css('display') == 'none')
     {
         $(blockId).animate({height: 'show'}, 500);
@@ -90,7 +91,3 @@ function diplay_hide (blockId)
         $(blockId).animate({height: 'hide'}, 500);
         par[0].classList.remove("active")
     }}
-
-
-
-
