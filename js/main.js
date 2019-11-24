@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     var timeList = 700;
-    // var TimeView = 5000;
+    // var TimeView = 1000;
     var RadioBut = true;
 
     var slideNum = 1;
@@ -91,22 +91,22 @@ $(document).ready(function () {
     rotator();
 
 });
-//
-// function diplay_hide (blockId)
-//
-// {
-//
-//     var par = document.getElementsByClassName('navigation-feed');
-//     if ($(blockId).css('display') == 'none')
-//     {
-//         $(blockId).animate({height: 'show'}, 500);
-//         par[0].classList.add("active")
-//     }
-//     else
-//     {
-//         $(blockId).animate({height: 'hide'}, 500);
-//         par[0].classList.remove("active")
-//     }}
+
+function diplay_hide (blockId)
+
+{
+
+    var par = document.getElementsByClassName('navigation-feed');
+    if ($(blockId).css('display') == 'none')
+    {
+        $(blockId).animate({height: 'show'}, 500);
+        par[0].classList.add("active")
+    }
+    else
+    {
+        $(blockId).animate({height: 'hide'}, 500);
+        par[0].classList.remove("active")
+    }}
 
 
 

@@ -26,7 +26,7 @@ textarea:focus, input:focus, button:focus {
 
 /* IE7 */
 body {
-    margin: 45px 0 0 0;
+    margin: 0;
     padding: 0;
     background-color: #e9e9e9;
     font-family: SF-Compact-Display-Regular, SF-Compact-Display-Medium, SF-Compact-Display-Bold, SF-Compact-Display-Black, Helvetica, Arial, UniNeue-Bold, sans-serif;
@@ -257,7 +257,7 @@ events
     padding: 0 5px 0 72px;
 }
 .events-item-recommends {
-    padding: 0 20px 24px 23px;
+    padding: 0 20px 24px 12px;
 }
 .events-item-recommends a {
     font-size: 14px;
@@ -342,11 +342,6 @@ events
     width: 188px;
     height: 120px;
 }
-.item-img__event {
-    width: 124px;
-    height: 168px;
-    left: 23px;
-}
 .item-img img {
     margin-bottom: -3px;
 }
@@ -354,7 +349,9 @@ events
 .recommended-item {
     width: 128px;
     background: linear-gradient(26.66deg, #FF971C 20.96%, #FF6600 104.08%);
-    transform: matrix(1, 0, 0, -1, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .events-item-padding__fixed {
     margin: 0 -128px 0 0 ;
@@ -401,7 +398,7 @@ navigation
 }
 .navigation-event span{
     position: absolute;
-    font-size: 8px;
+    font-size: 7px;
     min-width: 15px;
     text-align: center;
     display: inline-block;
@@ -409,7 +406,7 @@ navigation
     background-color: #2E61E5;
     border-radius: 18px;
     font-weight: bold;
-    top: -5px;
+    top: -7px;
     left: 15px;
     color: white;
 }
@@ -446,7 +443,33 @@ navigation
     width: 80%;
 }
 
-/*#block_id {*/
-/*    display: none;*/
-/*}*/
+#block_id {
+    display: none;
+}
 
+/*--------------------------------------------
+navigation
+---------------------------------------------*/
+.map-content {
+    min-height: 432px;
+    background-color: #2A2A2A;
+}
+.navigation-map {
+
+}
+.navigation-map a {
+    background: none;
+    font-size: 10px;
+    line-height: 12px;
+    height: auto;
+    width: auto;
+    color: #505050;
+    text-decoration: none;
+}
+.navigation-map a:hover {
+    background: none;
+    color: #FF971C;
+}
+.navigation-map .navigation-event span {
+    left: 24px;
+}
