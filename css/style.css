@@ -12,10 +12,10 @@ a:hover {
 
 /* Base styles */
 body {
+    background-color: black;
     color: #fff;
     min-width: 320px;
     font-size: 14px;
-    /*font-family: SF-Compact-Display-Regular, SF-Compact-Display-Medium, SF-Compact-Display-Bold, SF-Compact-Display-Black, UniNeue-Bold, sans-serif;*/
     font-family: 'SF Compact Display', sans-serif;
     line-height: 1.2;
 }
@@ -35,7 +35,7 @@ h2 {
 .page {
     background: #000;
     position: relative;
-    max-width: 320px;
+    max-width: 768px;
     margin: 0 auto;
     z-index: 2;
 }
@@ -58,7 +58,7 @@ h2 {
 .slider {
     margin: -5px 0 0 0;
     position: relative;
-    width: calc(100% * 3);
+    width: calc(100% * 4);
     top: 0;
     left: 0;
     padding: 0;
@@ -71,7 +71,7 @@ h2 {
 }
 
 .slide {
-    width: calc(100% / 3);
+    width: calc(100% / 4);
     list-style: none;
     display: inline;
     float: left;
@@ -83,7 +83,7 @@ h2 {
 }
 
 .slide.active {
-    width: calc(100% / 3);
+    width: calc(100% / 4);
     padding: 30px 22px 0 22px;
     margin-right: -15px;
 }
@@ -145,7 +145,14 @@ h2 {
 }
 .slide-event__location {
     background-image: url("../img/icons/location.png");
+    background-size: 11px 15px;
 }
+
+.slide-event__tour {
+    background-image: url("../img/icons/tour.png");
+    background-size: 17px 15px;
+}
+
 .show-details {
     font-size: 13px;
     line-height: 16px;
@@ -162,6 +169,7 @@ h2 {
     left: 0;
     top: 30px;
     z-index: 1;
+    opacity: 0.4;
     border-radius: 8px;
     height: 368px;
 }
@@ -188,6 +196,7 @@ h2 {
     text-indent: -9999px;
     background: #333333;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .radios .ctrl-select:hover {
@@ -201,6 +210,7 @@ h2 {
 }
 
 /* Media */
+
 .media {
     background: #151515;
 }
@@ -255,6 +265,7 @@ h2 {
     z-index: 1;
     transition: opacity .3s ease;
 }
+
 .media__item-preview--recommended {
     left: 140px;
 }
@@ -266,6 +277,8 @@ h2 {
     background-repeat: no-repeat;
     background-position: left 220px top 25px ;
 }
+
+/* Recommended__item */
 .recommended__item {
     position: absolute;
     width: 128px;
@@ -275,10 +288,12 @@ h2 {
     align-items: center;
     background: linear-gradient(26.66deg, #FF971C 20.96%, #FF6600 104.08%);
 }
+
 .recommended__item--music {
     width: 128px;
     height: 128px;
 }
+
 .recommended__item--event {
     width: 128px;
     height: 216px;
@@ -293,6 +308,7 @@ h2 {
     background-color: #2E61E5;
 }
 
+/* Media__item adjustments */
 .media__item-preview img {
     width: 100%;
     height: 100%;
@@ -401,8 +417,8 @@ h2 {
     padding-top: 22px;
 }
 
-
 /* Navigation */
+
 .navigation {
     left: 0;
     right: 0;
@@ -448,6 +464,10 @@ h2 {
     background-image: url("../img/icons/feeds.png")
 }
 
+.navigation__item.active {
+    color: #FF781C;
+}
+
 .navigation--feed.active .navigation__item-icon,
 .navigation--feed:hover .navigation__item-icon {
     background-image: url("../img/icons/feeds-active.png")
@@ -468,15 +488,18 @@ h2 {
     height: 23px;
     background-image: url("../img/icons/search.png")
 }
+
 .navigation--search:hover .navigation__item-icon,
 .navigation--search.active .navigation__item-icon {
     background-image: url("../img/icons/search-active.png")
 }
+
 .navigation--profile .navigation__item-icon {
     width: 27px;
     height: 26px;
     background-image: url("../img/icons/profile.png")
 }
+
 .navigation--profile.active .navigation__item-icon,
 .navigation--profile:hover .navigation__item-icon {
     background-image: url("../img/icons/profile-active.png")
@@ -486,12 +509,10 @@ h2 {
     display: none;
 }
 
-/*--------------------------------------------
-map
----------------------------------------------*/
+/* Map-page */
+
 .map-page {
     min-height: 432px;
-    background-color: #2A2A2A;
     position: relative;
 }
 .map-page__header {
@@ -531,6 +552,15 @@ map
     background: #FF781C;
     border-radius: 5px;
 }
+
+/* Map-page*/
+
+/* google-maps*/
+#map {
+    width: 100%;
+    height: 432px;
+}
+
 .navigation a {
     background: none;
     font-size: 10px;
@@ -542,6 +572,7 @@ map
     position: relative;
     text-decoration: none;
 }
+
 .navigation a:hover {
     background: none;
     color: #FF971C;
@@ -551,9 +582,11 @@ map
     display: inline-block;
     position: relative;
 }
+
 .map-content-button {
     position: absolute;
     width: 42px;
+    z-index: 10;
     height: 42px;
     display: block;
     border-radius: 50%;
@@ -561,29 +594,59 @@ map
     background-repeat: no-repeat;
     background-position: center center;
 }
+
 .map-content-button__feed {
     background-image: url("../img/icons/feed-sall.png");
     bottom: 24px;
     left: 24px;
 }
+
 .map-content-button__events {
     background-image: url("../img/icons/Vector.png");
     bottom: 24px;
     right: 24px;
 }
+
+.location {
+    position: absolute;
+    top: 200px;
+    left: 80px;
+    z-index: 10;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(26.66deg, #FF971C 20.96%, #FF6600 104.08%);
+}
+
+.location-active {
+    top: 290px;
+    left: 160px;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 151, 28, 0.5);
+}
+
+.location-active span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(26.66deg, #FF971C 20.96%, #FF6600 104.08%);
+}
+
 .navigation__item-counter--else-position {
     top: 1px;
     right: -5px;
 }
+
 .navigation__item-counter--map {
     right: -10px;
     top: -7px;
 }
 
-#block_id-map {
-    overflow: hidden;
-    border-radius: 12px 12px 0 0;
-}
 .event-date__bottom-padding {
     padding-top: 15px;
 }
@@ -591,3 +654,5 @@ map
     background-image: none;
     margin: 0 -250px 0 0;
 }
+
+

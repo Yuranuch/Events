@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Map</title>
     <link href="css/style.css" rel="stylesheet">
-	<link href="css/fonts.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 </head>
@@ -19,12 +19,17 @@
         </div>
         <div class="map-content-button map-content-button__events">
         </div>
+        <div class="location"></div>
+        <div class="location location-active">
+            <span></span>
+        </div>
+        <div id="map"></div>
     </div>
     <div class="navigation">
         <a href="#" class="navigation__item navigation--feed">
             Feed
         </a>
-        <a href="#" class="navigation__item navigation--event">
+        <a href="#" class="navigation__item navigation--event active">
             <div class="item-counter-fix">
                 Events
                 <div class="navigation__item-counter navigation__item-counter--map">28</div>
@@ -37,8 +42,6 @@
             Profile
         </a>
     </div>
-
-
     <div class="map-page__wrap">
         <div class="map-page__header">
             <h2>Amsterdam</h2>
@@ -46,99 +49,99 @@
         </div>
         <div class="map-page__content">
             <div class="map-page__content--radius">
-
-            <div class="map-page__content--strip"></div>
-            <div class="media">
-                <a href="#" class="media__item media__item--event">
-                    <div class="media__item media__item__wrap">
-                        <div class="media__item-preview">
-                            <img src="./img/height-img.png" alt="">
-                        </div>
-                        <div class="media__item-content">
-                            <div class="media__item-title media__item-title--font">King or queen of the circle 2018
+                <div class="map-page__content--strip"></div>
+                <div class="media">
+                    <a href="#" class="media__item media__item--event">
+                        <div class="media__item media__item__wrap">
+                            <div class="media__item-preview">
+                                <img src="./img/height-img.png" alt="">
                             </div>
-                            <div class="media__item-info media__item-info--font media__item-info--font__top-padding">13
-                                October
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="media__item media__item--event">
-                    <div class="media__item media__item__wrap">
-                        <div class="media__item__flag">
-                            <img src="./img/icons/flag.png" alt="f">
-                        </div>
-                        <div class="media__item-preview">
-                            <img src="./img/height-img-2.png" alt="">
-                        </div>
-                        <div class="media__item-content">
-                            <div class="media__item-title media__item-title--font">Temple rock: 5 year anniversary 2018
-                            </div>
-                            <div class="media__item-info media__item-info--font media__item-info--font__top-padding">13
-                                October
+                            <div class="media__item-content">
+                                <div class="media__item-title media__item-title--font">King or queen of the circle 2018
+                                </div>
+                                <div class="media__item-info media__item-info--font media__item-info--font__top-padding">
+                                    13 October
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href="#" class="media__item media__item--event">
-                    <div class="recommended__item recommended__item--event">
-                        <img src="./img/icons/flag-white.png" alt="flag">
-                    </div>
-                    <div class="media__item__wrap media__item__event--recommended">
-                        <div class="media__item-preview media__item-preview--recommended">
-                            <img src="./img/height-img-2.png" alt="">
-                        </div>
-                        <div class="media__item-content">
-                            <div class="media__item-title media__item-title--font">Temple rock: 5 year anniversary 2018
+                    </a>
+                    <a href="#" class="media__item media__item--event">
+                        <div class="media__item media__item__wrap">
+                            <div class="media__item__flag">
+                                <img src="./img/icons/flag.png" alt="f">
                             </div>
-
-                            <div class="media__item-info media__item-info--font media__item-info--font__top-padding">13
-                                October
+                            <div class="media__item-preview">
+                                <img src="./img/height-img-2.png" alt="">
                             </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="media__item media__item--event">
-                    <div class="media__item media__item__wrap">
-                        <div class="choice__item"></div>
-                        <div class="media__item-preview">
-                            <img src="./img/height-img-3.png" alt="">
-                        </div>
-                        <div class="media__item-content">
-                            <div class="media__item-title media__item-title--font">Soul Rockerz 20</div>
-                            <div class="media__item-info media__item-info--font media__item-info--font__top-padding">11
-                                October
+                            <div class="media__item-content">
+                                <div class="media__item-title media__item-title--font">Temple rock: 5 year anniversary
+                                    2018
+                                </div>
+                                <div class="media__item-info media__item-info--font media__item-info--font__top-padding">
+                                    13
+                                    October
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href="#" class="media__item media__item--event">
-                    <div class="media__item media__item__wrap">
-                        <div class="media__item-preview">
-                            <img src="./img/height-img-4.png" alt="">
+                    </a>
+                    <a href="#" class="media__item media__item--event">
+                        <div class="recommended__item recommended__item--event">
+                            <img src="./img/icons/flag-white.png" alt="flag">
                         </div>
-                        <div class="media__item-content">
-                            <div class="media__item-title media__item-title--font">Rockland's 10 year<br/> hip-hop
-                                showcase
+                        <div class="media__item__wrap media__item__event--recommended">
+                            <div class="media__item-preview media__item-preview--recommended">
+                                <img src="./img/height-img-2.png" alt="">
                             </div>
-                            <div class="media__item-info media__item-info--font media__item-info--font__top-padding">11
-                                October
+                            <div class="media__item-content">
+                                <div class="media__item-title media__item-title--font">Temple rock: 5 year anniversary
+                                    2018
+                                </div>
+                                <div class="media__item-info media__item-info--font media__item-info--font__top-padding">
+                                    13
+                                    October
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                    <a href="#" class="media__item media__item--event">
+                        <div class="media__item media__item__wrap">
+                            <div class="choice__item"></div>
+                            <div class="media__item-preview">
+                                <img src="./img/height-img-3.png" alt="">
+                            </div>
+                            <div class="media__item-content">
+                                <div class="media__item-title media__item-title--font">Soul Rockerz 20</div>
+                                <div class="media__item-info media__item-info--font media__item-info--font__top-padding">
+                                    11 October
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="media__item media__item--event">
+                        <div class="media__item media__item__wrap">
+                            <div class="media__item-preview">
+                                <img src="./img/height-img-4.png" alt="">
+                            </div>
+                            <div class="media__item-content">
+                                <div class="media__item-title media__item-title--font">Rockland's 10 year<br/> hip-hop
+                                    showcase
+                                </div>
+                                <div class="media__item-info media__item-info--font media__item-info--font__top-padding">
+                                    11 October
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
-            </div>
-
-
         </div>
     </div>
-
-
-
 </div>
 
 
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvAqFobUA9nKzWrIMJ4dmDoaGQfIMLKMk&callback=initMap">
+</script>
 
 <script src="js/main.js"></script>
 </body>
