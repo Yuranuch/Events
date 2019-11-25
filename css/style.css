@@ -35,9 +35,10 @@ h2 {
 .page {
     background: #000;
     position: relative;
-    max-width: 768px;
+    max-width: 320px;
     margin: 0 auto;
     z-index: 2;
+    overflow: hidden;
 }
 
 /* Slider */
